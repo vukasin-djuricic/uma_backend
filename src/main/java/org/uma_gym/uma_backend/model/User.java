@@ -44,7 +44,9 @@ public class User {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    // Relationships
+    @Column(nullable = false)
+    private boolean passwordChangeRequired = true; //default TRUE za nove korisnike
+
     @OneToMany(mappedBy = "user")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude

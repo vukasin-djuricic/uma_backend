@@ -5,9 +5,10 @@ import org.springframework.stereotype.Repository;
 import org.uma_gym.uma_backend.model.User;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, UUID> {
     // automatski radi kada se poklapa findBy[naziv](type naziv)
     //koristice se za pronalazak User-a sa istim email-om
     Optional<User> findByEmail(String email);
