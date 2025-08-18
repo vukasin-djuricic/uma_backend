@@ -8,6 +8,7 @@ import org.uma_gym.uma_backend.model.enums.AccessLevel;
 
 import java.math.BigDecimal;
 import java.util.Set;
+import java.util.UUID;
 
 @Entity
 @Table(name = "membership_plans")
@@ -15,9 +16,9 @@ import java.util.Set;
 public class MembershipPlan {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "plan_id")
-    private Long id;
+    private UUID id;
 
     @Column(nullable = false)
     private String name;
